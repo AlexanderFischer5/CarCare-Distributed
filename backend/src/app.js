@@ -38,6 +38,17 @@ app.use(express.urlencoded({ extended: true }));
 // ============================================================
 
 /**
+ * Alle Wartungs-Routen werden unterhalb eines Fahrzeugs verfügbar gemacht.
+ * Beispiel: /api/vehicles/1/maintenances
+ *
+ * WICHTIG: Diese Routen MÜSSEN vor den Fahrzeug-Routen registriert werden,
+ * da der vehiclesRouter die Route /:id enthält, die sonst
+ * /api/vehicles/1/maintenances als id="1/maintenances" matchen würde.
+ */
+const maintenancesRouter = require("./routes/maintenances");
+app.use("/api/vehicles/:vehicleId/maintenances", maintenancesRouter);
+
+/**
  * Alle Fahrzeug-Routen werden unter /api/vehicles verfügbar gemacht.
  */
 const vehiclesRouter = require("./routes/vehicles");
