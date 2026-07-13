@@ -1,5 +1,5 @@
 /**
- * REST-Routen für Fahrzeuge.
+ * REST-Routen für Fahrzeuge.    Hier werden die FAHRZEUGDATEN abgefragt.
  *
  * Bietet CRUD-Operationen für Fahrzeugdaten an:
  * - GET    /api/vehicles       Alle Fahrzeuge abrufen
@@ -19,7 +19,7 @@ const vehicleStore = require("../data/store");
  * GET /api/vehicles
  * Gibt alle gespeicherten Fahrzeuge zurück.
  */
-router.get("/", (req, res) => {
+router.get("/", (req, res) => {         //Hier empfängt das Backend die Anfrage vom Reminder-Service und verarbeitet sie.
   const vehicles = vehicleStore.getAll();
   res.json({
     success: true,

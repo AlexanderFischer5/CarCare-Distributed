@@ -1,5 +1,5 @@
 /**
- * REST-Routen für Wartungen.
+ * REST-Routen für Wartungen.   Hier werden die WARTUNGSDATEN abgefragt.  Das ist die Schnittstelle zwischen dem Reminder-Service und dem Backend.
  *
  * Bietet CRUD-Operationen für Wartungsdaten an.
  * Alle Routen sind unterhalb eines Fahrzeugs erreichbar:
@@ -24,11 +24,11 @@ const maintenanceStore = require("../data/maintenanceStore");
 /**
  * Gibt alle Wartungen eines Fahrzeugs zurück.
  */
-router.get("/", (req, res) => {
-  const vehicleId = parseInt(req.params.vehicleId, 10);
-  const maintenances = maintenanceStore.getByVehicleId(vehicleId);
+router.get("/", (req, res) => {                            //Hier empfängt das Backend die Anfrage vom Reminder-Service und verarbeitet sie.
+  const vehicleId = parseInt(req.params.vehicleId, 10);    //Das ist die Verknüpfung zum Fahrzeug. Welche Wartungen gehören zu welchem Fahrzeug? Das wird hier über die vehicleId ermittelt.
+  const maintenances = maintenanceStore.getByVehicleId(vehicleId); //Das wird hier über die vehicleId ermittelt/rausgefiltert.  Das ist die Stelle, an der das Backend die Wartungsdaten für das angefragte Fahrzeug abruft.
 
-  res.json({
+  res.json({                                            //Das ist die Stelle, an der das Backend die JSON-Antwort erzeugt und zurückschickt.
     success: true,
     count: maintenances.length,
     data: maintenances,

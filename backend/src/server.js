@@ -1,5 +1,5 @@
 /**
- * HTTP-Server-Startpunkt für das CarCare-Distributed Backend.
+ * HTTP-Server-Startpunkt für das CarCare-Distributed Backend. Das ist die Haustür. Mehr macht der eigentlich gar nicht. "Öffne Tür Nummer 3000." Ohne server.js ist Backend garnicht erreichbar,
  *
  * Diese Datei erstellt den Server, bindet die Express-App ein
  * und lauscht auf dem konfigurierten Port.

@@ -1,5 +1,7 @@
 /**
- * Express-Anwendungskonfiguration.
+ * Express-Anwendungskonfiguration. Jetzt kommt das Gehirn. Hier wird alles zusammengesetzt. 
+ * "Wenn jemand Wartungen möchte, dann schicke ihn zu maintenances.js." 
+ * "Wenn jemand Fahrzeuge möchte, dann schicke ihn zu vehicles.js."
  *
  * Diese Datei richtet die Middleware und die Routen ein.
  * Der eigentliche Server wird in server.js gestartet.
